@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>CSCI225 Homepage of Jadon Ott</title>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+        <div class="video">
+            <iframe src="video/deadlift.mp4" width="150" height="200"></iframe>
+        </div>
+        <div class="userform">
+            <form action="" name="feedback">
+                <p>First Name*: <input type="text" name="fname" placeholder="anonymous" required></p>
+                <p>Last Name*: <input type="text" name="lname" placeholder="anonymous" required></p>
+                <p>Email: <input type="email" name="mail" placeholder="name@domain.com"></p>
+                <p>Telephone: <input type="tel" name="tel" placeholder="(XXX) XXX-XXXX" 
+					pattern="\(\d{3}\) \d{3}-\d{4}"></p>
+                <p>Would you recommend this website?<input type="radio" name="recommend" value="yes">Yes
+                <input type="radio" name="recommend" value="no">No</p>
+                <p>Select your favorite website: <select name="website">
+                    <option value="google">Google</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="twitter">Twitter</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="youtube">Youtube</option>
+                </select></p>
+                <p>Select your favorite color: <input type="color" name="color"></p>
+                <p>Rate this website: 1<input type="range" min="1" max="10" value="5" name="rating">10</p>
+                <p>Comments: <br> <textarea name="comments" rows="5" cols="40" placeholder="Enter your comments here..."></textarea></p>
+                <input type="hidden" name="hidden" value="user">
+                <p><input type="submit" value="Submit"></p>
+            </form>
+        </div>
+    </body>
+</html>
