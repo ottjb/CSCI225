@@ -1,16 +1,25 @@
 /* 00: CSS Variables */
 :root{
-    --page-color: hsl(180, 100%, 14%);
-    --background-color: hsl(180, 100%, 29%);
-    --page-width: 30%;
+    --page-color: hsla(344, 15%, 43%, 1);
+    --block-color: hsla(344, 15%, 43%, .5);
+    --page-width: 25%;
 }
 
 /* 01: Color */
 body{
-    background-color: var(--background-color);
+    background-image: url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.introduction, div.portfolio, div.schedule p, div.assignment p, address p{
+    background-color: var(--block-color);
 }
 
 /* 02: Typography */
+h1, h3, p{
+    color: #a7c2cc;
+}
 
 /* 03: Layout */
 footer{
@@ -19,57 +28,65 @@ footer{
     left: 45%;
 }
 
-div.introduction p, div.portfolio p, div.portfolio h3, div.schedule table, div.assignment ol, address p{
+div.introduction, div.portfolio, div.schedule, div.assignment, address{
     position: absolute;
     top: center;
-    left: 35%;
+    left: 37.5%;
     width: var(--page-width);
-    background-color: var(--page-color);
-    display: none;
+    height: auto;
+    visibility: hidden;
 }
 
 div.introduction h1, div.portfolio h1, div.schedule h1, div.assignment h1, address h3{
-    position: absolute;
-    background-color: var(--page-color);
     text-align: center;
     width: 15%;
     height: auto;
 }
 
 div.introduction h1{
+    position: fixed;
     top: 30%;
     left: 10%;
+    background-color: var(--page-color);
+    visibility: visible;
 }
 
 div.portfolio h1{
+    position: fixed;
     top: 30%;
     right: 10%;
+    background-color: var(--page-color);
+    visibility: visible;
 }
 
 div.schedule h1{
+    position: fixed;
     bottom: 30%;
     left: 20%;
+    background-color: var(--page-color);
+    visibility: visible;
 }
 
 div.assignment h1{
+    position: fixed;
     bottom: 30%;
     right: 20%;
+    background-color: var(--page-color);
+    visibility: visible;
 }
 
 address h3{
+    position: fixed;
     bottom: 10%;
     left: 43%;
+    background-color: var(--page-color);
+    visibility: visible;
 }
 
-div.introduction:hover{
-    background-color: hsl(3, 23, 13%);
-    display: contents;
+.introduction:hover{
+    visibility: visible;
 }
 
-div.portfolio:hover{
-    background-color: hsl(3, 23, 13%);
-    display: block;
+.portfolio:hover{
+    visibility: visible;
 }
-
-
-
