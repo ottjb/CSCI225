@@ -1,0 +1,75 @@
+/* 00: CSS Variables */
+:root{
+    --page-color: hsl(180, 100%, 14%);
+    --background-color: hsl(180, 100%, 29%);
+    --page-width: 30%;
+}
+
+/* 01: Color */
+body{
+    background-color: var(--background-color);
+}
+
+/* 02: Typography */
+
+/* 03: Layout */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 45%;
+}
+
+div.introduction p, div.portfolio p, div.portfolio h3, div.schedule table, div.assignment ol, address p{
+    position: absolute;
+    top: center;
+    left: 35%;
+    width: var(--page-width);
+    background-color: var(--page-color);
+    display: none;
+}
+
+div.introduction h1, div.portfolio h1, div.schedule h1, div.assignment h1, address h3{
+    position: absolute;
+    background-color: var(--page-color);
+    text-align: center;
+    width: 15%;
+    height: auto;
+}
+
+div.introduction h1{
+    top: 30%;
+    left: 10%;
+}
+
+div.portfolio h1{
+    top: 30%;
+    right: 10%;
+}
+
+div.schedule h1{
+    bottom: 30%;
+    left: 20%;
+}
+
+div.assignment h1{
+    bottom: 30%;
+    right: 20%;
+}
+
+address h3{
+    bottom: 10%;
+    left: 43%;
+}
+
+div.introduction:hover{
+    background-color: hsl(3, 23, 13%);
+    display: contents;
+}
+
+div.portfolio:hover{
+    background-color: hsl(3, 23, 13%);
+    display: block;
+}
+
+
+
