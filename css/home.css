@@ -12,12 +12,48 @@ body{
     background-size: cover;
 }
 
-div.introduction, div.portfolio, div.schedule p, div.assignment p, address p{
+div.introduction, div.portfolio, div.schedule table, div.assignment, address{
     background-color: var(--block-color);
 }
 
+div.introduction h1, div.portfolio h1, div.schedule h1, div.assignment h1, address h3{
+    background-color: var(--page-color);
+}
+
+footer {
+    background-color: var(--page-color);
+}
+
 /* 02: Typography */
-h1, h3, p{
+h1, h3, p, table{
+    color: #a7c2cc;
+}
+
+p {
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+ul, ol{
+    font-weight: bold;
+    color: #a7c2cc;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1.4em;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #a7c2cc;
+}
+
+footer{
+    text-align: center;
     color: #a7c2cc;
 }
 
@@ -26,67 +62,86 @@ footer{
     position: fixed;
     bottom: 0;
     left: 45%;
+    height: 3%;
+    width: 10%;
 }
 
-div.introduction, div.portfolio, div.schedule, div.assignment, address{
+div.introduction, div.portfolio, div.assignment, address{
     position: absolute;
-    top: center;
+    top: 20%;
     left: 37.5%;
     width: var(--page-width);
     height: auto;
     visibility: hidden;
+    transition: 1.5s;
+}
+
+div.schedule{
+    position: absolute;
+    top: center;
+    left: 32.5%;
+    width: 35%;
+    height: auto;
+    visibility: hidden;
+    transition: 1.5s;
 }
 
 div.introduction h1, div.portfolio h1, div.schedule h1, div.assignment h1, address h3{
+    position: fixed;
     text-align: center;
     width: 15%;
     height: auto;
+    visibility: visible;
 }
 
 div.introduction h1{
-    position: fixed;
     top: 30%;
     left: 10%;
-    background-color: var(--page-color);
-    visibility: visible;
 }
 
 div.portfolio h1{
-    position: fixed;
     top: 30%;
     right: 10%;
-    background-color: var(--page-color);
-    visibility: visible;
 }
 
 div.schedule h1{
-    position: fixed;
     bottom: 30%;
-    left: 20%;
-    background-color: var(--page-color);
-    visibility: visible;
+    left: 15%;
 }
 
 div.assignment h1{
-    position: fixed;
     bottom: 30%;
-    right: 20%;
-    background-color: var(--page-color);
-    visibility: visible;
+    right: 15%;
 }
 
 address h3{
-    position: fixed;
     bottom: 10%;
     left: 43%;
+}
+
+div.navbar {
+    width: 1000px;
+    margin-left: 16%;
+}
+
+div.navbar li {
+    display: inline;
+    margin-left: 30px;
     background-color: var(--page-color);
+}
+
+/* 04: Hover effects */
+.introduction:hover, .portfolio:hover, .schedule:hover, .assignment:hover, address:hover{
     visibility: visible;
 }
 
-.introduction:hover{
-    visibility: visible;
+a:hover{
+    font-style: italic;
+    font-size: 1.2em;
 }
 
-.portfolio:hover{
-    visibility: visible;
+/* 05: Border Styles */
+div.portfolio, address, div.schedule{
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
 }
