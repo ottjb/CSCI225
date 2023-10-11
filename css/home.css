@@ -125,7 +125,7 @@ div.navbar {
 }
 
 div.navbar li {
-    display: inline;
+    display: inline-table;
     margin-left: 30px;
     background-color: var(--page-color);
 }
