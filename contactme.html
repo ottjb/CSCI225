@@ -13,23 +13,16 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <div class="navbar">
-                    <ul>
-                        <li>
-                            <a href="https://www.usca.edu/">USCA Main Website</a>
-                        </li>
-                        <li>
-                            <a href="#assignment">Assignments</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contact Information</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/ottjb">My Github Account</a>
-                        </li>
-                        <li>
-                            <a href="https://www.openpowerlifting.org/u/jadonott">My Rankings</a>
-                        </li>
+                <div class="navbar navbar-expand-lg navbar-light bg-dark">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link text-white" href="https://www.usca.edu/">USCA Main
+                                Website</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#assignment">Assignments</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact Information</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="https://github.com/ottjb">My Github
+                                Account</a></li>
+                        <li class="nav-item"><a class="nav-link text-white"
+                                href="https://www.openpowerlifting.org/u/jadonott">My Rankings</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,34 +31,62 @@
         <div class="row">
             <div class="col">
                 <div class="video">
-                    <iframe src="video/deadlift.mp4" width="400" height="550"></iframe>
+                    <iframe class="border rounded" src="video/deadlift.mp4" width="394" height="525"></iframe>
                 </div>
             </div>
             <div class="col">
                 <div class="userform">
                     <form action="" name="feedback">
-                        <p>First Name*: <input type="text" name="fname" placeholder="anonymous" required></p>
-                        <p>Last Name*: <input type="text" name="lname" placeholder="anonymous" required></p>
-                        <p>Email: <input type="email" name="mail" placeholder="name@domain.com"></p>
-                        <p>Telephone: <input type="tel" name="tel" placeholder="(XXX) XXX-XXXX"
-                                pattern="\(\d{3}\) \d{3}-\d{4}">
-                        </p>
-                        <p>Would you recommend this website?<input type="radio" name="recommend" value="yes">Yes
-                            <input type="radio" name="recommend" value="no">No
-                        </p>
-                        <p>Select your favorite website: <select name="website">
-                                <option value="google">Google</option>
-                                <option value="facebook">Facebook</option>
-                                <option value="twitter">Twitter</option>
-                                <option value="instagram">Instagram</option>
-                                <option value="youtube">Youtube</option>
-                            </select></p>
-                        <p>Select your favorite color: <input type="color" name="color"></p>
-                        <p>Rate this website: 1<input type="range" min="1" max="10" value="5" name="rating">10</p>
-                        <p>Comments: <br> <textarea name="comments" rows="5" cols="40"
-                                placeholder="Enter your comments here..."></textarea></p>
+                        <h1>Feedback Form</h1>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="fname" placeholder="anonymous" id="fname" required>
+                            <label for="fname">First Name*: </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" name="lname" placeholder="anonymous" id="lname" required>
+                            <label for="lname">Last Name*: </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" placeholder="name@domain.com" name="mail" id="email">
+                            <label for="email">Email: </label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="tel" class="form-control" name="tel" id="tel" placeholder="(XXX) XXX-XXXX"
+                                    pattern="\(\d{3}\) \d{3}-\d{4}">
+                            <label for="tel">Telephone: </label>
+                        </div>
+                        <div class="form-group">
+                            <p>Would you recommend this website?
+                                <label class="form-check-label"><input type="radio" class="form-check-input"
+                                        name="recommend" value="yes">Yes</label>
+                                <label class="form-check-label"><input type="radio" class="form-check-input"
+                                        name="recommend" value="no">No</label>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p>Select your favorite website: <select class="form-control" name="website">
+                                    <option value="google">Google</option>
+                                    <option value="facebook">Facebook</option>
+                                    <option value="twitter">Twitter</option>
+                                    <option value="instagram">Instagram</option>
+                                    <option value="youtube">Youtube</option>
+                                </select></p>
+                        </div>
+                        <div class="form-group">
+                        <p>Select your favorite color: <input type="color" class="form-control" name="color"></p>
+                        </div>
+                        <div class="form-group">
+                            Rate this website: 1<input type="range" class="form-range" min="1" max="10" value="5" name="rating">10
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                Comments: <br> <textarea name="comments" rows="5" cols="40"
+                                    placeholder="Enter your comments here..."></textarea></p>
+                        </div>
                         <input type="hidden" name="hidden" value="user">
-                        <p><input type="submit" value="Submit"></p>
+                        <div class="form-group">
+                            <input type="submit" class="btn" value="Submit">
+                        </div>
                     </form>
                 </div>
             </div>

@@ -1,3 +1,9 @@
+/* to-do
+box shadow
+table section
+style even rows
+*/
+
 /* 00: CSS Variables */
 :root{
     --page-color: hsla(344, 15%, 43%, 1);
@@ -19,6 +25,10 @@ div.introduction h1, div.portfolio h1, div.schedule h1, div.assignment h1, addre
 
 footer {
     background-color: var(--page-color);
+}
+
+tr:nth-child(even) {
+    background-color: var(--block-color);
 }
 
 /* 02: Typography */
@@ -64,6 +74,14 @@ footer{
     color: var(--text-color);
 }
 
+p::first-letter{
+    font-style: italic;
+}
+
+.portfolio p:first-of-type{
+    box-shadow: 12px 12px 2px 1px hsla(344, 15%, 43%, .2);
+}
+
 /* 03: Layout */
 footer{
     position: fixed;
@@ -94,7 +112,6 @@ div.introduction{
 }
 
 div.schedule{
-    top: center;
     left: 32.5%;
     width: 35%;
     height: auto;
@@ -156,6 +173,15 @@ div.navbar li {
     background-color: var(--page-color);
 }
 
+.schedule table{
+    border: 3px solid var(--text-color);
+    padding: 1vw;
+    vertical-align: baseline;
+    border-collapse: collapse;
+    empty-cells: show;
+    text-align: center;
+}
+
 /* 04: Hover effects */
 .introduction:hover, .portfolio:hover, .schedule:hover, .assignment:hover, address:hover{
     visibility: visible;
@@ -179,10 +205,6 @@ a:hover{
 }
 
 /* 05: Border Styles */
-/* div.portfolio, address, div.schedule{
-    border-right: 3px solid #fff;
-    border-bottom: 3px solid #fff;
-} */
 
 div.navbar li{
     border-radius: 30px
