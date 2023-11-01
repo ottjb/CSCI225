@@ -57,7 +57,8 @@
                             var withinCityLimits = document.getElementById("withinCityLimits").checked;
                             var summer = document.getElementById("season").checked;
                             // Base Charge
-                            document.getElementById("baseCharge").innerHTML = (daysOfBillingPeriod * 0.4603).toFixed(2);
+                            var baseCharge = (daysOfBillingPeriod * 0.4603)
+                            document.getElementById("baseCharge").innerHTML = baseCharge.toFixed(2);
 
                             // Tier 1, 2, 3 Component
                             var t1Charge = 0;
@@ -65,73 +66,77 @@
                             var t3Charge = 0;
                             if (summer) {
                                 if (monthlyUsage <= 650) {
-                                    t1Charge = (monthlyUsage * 0.066678).toFixed(2);
+                                    t1Charge = monthlyUsage * 0.066678;
                                 } else if (monthlyUsage <= 1000) {
-                                    t1Charge = (650 * 0.066678).toFixed(2);
-                                    t2Charge = ((monthlyUsage - 650) * 0.110748).toFixed(2);
+                                    t1Charge = 650 * 0.066678;
+                                    t2Charge = ((monthlyUsage - 650) * 0.110748);
                                 } else {
                                     console.log("here");
-                                    t1Charge = (650 * 0.066678).toFixed(2);
-                                    t2Charge = (350 * 0.110748).toFixed(2);
-                                    t3Charge = ((monthlyUsage - 1000) * 0.114625).toFixed(2);
+                                    t1Charge = 650 * 0.066678;
+                                    t2Charge = 350 * 0.110748;
+                                    t3Charge = ((monthlyUsage - 1000) * 0.114625);
                                 }
                             } else {
                                 if (monthlyUsage <= 650) {
-                                    t1Charge = (monthlyUsage * 0.062404).toFixed(2);
+                                    t1Charge = monthlyUsage * 0.062404;
                                 } else if (monthlyUsage <= 1000) {
-                                    t1Charge = (650 * 0.062404).toFixed(2);
-                                    t2Charge = ((monthlyUsage - 650) * 0.062404).toFixed(2);
+                                    t1Charge = 650 * 0.062404;
+                                    t2Charge = ((monthlyUsage - 650) * 0.062404);
                                 } else {
                                     console.log("here");
-                                    t1Charge = (650 * 0.062404).toFixed(2);
-                                    t2Charge = (350 * 0.062404).toFixed(2);
-                                    t3Charge = ((monthlyUsage - 1000) * 0.062404).toFixed(2);
-
-                                    console.log(t1Charge);
-                                    console.log(t2Charge);
-                                    console.log(t3Charge);
-                                    document.getElementById("tier1").innerHTML = t1Charge;
-                                    document.getElementById("tier2").innerHTML = t2Charge;
-                                    document.getElementById("tier3").innerHTML = t3Charge;
+                                    t1Charge = 650 * 0.062404;
+                                    t2Charge = 350 * 0.062404;
+                                    t3Charge = ((monthlyUsage - 1000) * 0.062404);
                                 }
                             }
+                            document.getElementById("tier1").innerHTML = t1Charge.toFixed(2);
+                            document.getElementById("tier2").innerHTML = t2Charge.toFixed(2);
+                            document.getElementById("tier3").innerHTML = t3Charge.toFixed(2);
 
                             // Base Revenue
-                            document.getElementById("baseRev").innerHTML = (parseFloat(document.getElementById("baseCharge").innerHTML) + parseFloat(t1Charge) + parseFloat(t2Charge) + parseFloat(t3Charge)).toFixed(2);
+                            var baseRevenue = baseCharge + t1Charge + t2Charge + t3Charge;
+                            document.getElementById("baseRev").innerHTML = baseRevenue.toFixed(2);
 
                             // Fuel Cost Rider
+                            var fuelCost = 0;
                             if (summer) {
-                                document.getElementById("fuelCost").innerHTML = (monthlyUsage * 0.045876).toFixed(2);
+                                fuelCost = monthlyUsage * 0.045876;
                             } else {
-                                document.getElementById("fuelCost").innerHTML = (monthlyUsage * 0.042859).toFixed(2);
+                                fuelCost = monthlyUsage * 0.042859;
                             }
+                            document.getElementById("fuelCost").innerHTML = fuelCost.toFixed(2);
 
                             // Demand Side Management Residential Rider
-                            var baseRevenue = parseFloat(document.getElementById("baseRev").innerHTML);
-                            document.getElementById("demandSide").innerHTML = (baseRevenue * 0.015989).toFixed(2);
+                            var demandSide = baseRevenue * 0.015989
+                            document.getElementById("demandSide").innerHTML = demandSide.toFixed(2);
 
                             // Nuclear Construction Cost Recovery Rider
-                            document.getElementById("nuclearConstruction").innerHTML = (baseRevenue * 0.041562).toFixed(2);
+                            var nuclearConstruction = baseRevenue * 0.041562;
+                            document.getElementById("nuclearConstruction").innerHTML = nuclearConstruction.toFixed(2);
 
                             // Environmental Compliance Cost Recovery Rider
-                            document.getElementById("environmentalCompliance").innerHTML = (baseRevenue * 0.162813).toFixed(2);
+                            var environmentalCompliance = baseRevenue * 0.162813;
+                            document.getElementById("environmentalCompliance").innerHTML = environmentalCompliance.toFixed(2);
 
                             // Total Revenue
-                            document.getElementById("totalRevenue").innerHTML = (baseRevenue + parseFloat(document.getElementById("fuelCost").innerHTML) + parseFloat(document.getElementById("demandSide").innerHTML) + parseFloat(document.getElementById("nuclearConstruction").innerHTML) + parseFloat(document.getElementById("environmentalCompliance").innerHTML)).toFixed(2);
+                            var totalRevenue = baseRevenue + fuelCost + demandSide + nuclearConstruction + environmentalCompliance;
+                            document.getElementById("totalRevenue").innerHTML = totalRevenue.toFixed(2);
 
                             // Franchise Fee
-                            var totalRev = parseFloat(document.getElementById("totalRevenue").innerHTML);
+                            var franchiseFee = 0;
                             if (withinCityLimits) {
-                                document.getElementById("franchiseFee").innerHTML = (totalRev * 0.030674).toFixed(2);
+                                franchiseFee = totalRevenue * 0.030674;
                             } else {
-                                document.getElementById("franchiseFee").innerHTML = (totalRev * 0.011839).toFixed(2);
+                                franchiseFee = totalRevenue * 0.011839;
                             }
+                            document.getElementById("franchiseFee").innerHTML = franchiseFee.toFixed(2);
 
                             // Total (excluding tax)
-                            document.getElementById("totalNoTax").innerHTML = (totalRev + parseFloat(document.getElementById("franchiseFee").innerHTML)).toFixed(2);
+                            var totalNoTax = totalRevenue + franchiseFee;
+                            document.getElementById("totalNoTax").innerHTML = totalNoTax.toFixed(2);
 
                             // Total (w/tax)
-                            var totalWithTax = parseFloat(document.getElementById("totalNoTax").innerHTML) * (1 + (salesTax / 100));
+                            var totalWithTax = totalNoTax * (1 + (salesTax / 100));
                             document.getElementById("totalWithTax").innerHTML = totalWithTax.toFixed(2);
                             if (totalWithTax > 500) {
                                 open('https://www.georgiapower.com/residential/save-money-and-energy/products-programs.html')
