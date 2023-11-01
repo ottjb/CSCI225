@@ -1,0 +1,97 @@
+:root{
+    --border-colors: hsla(0, 0%, 35%, 0.4);
+}
+
+.col {
+    border-style: solid;
+    border-radius: 30px;
+    border-color: var(--border-colors);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85em;
+}
+
+.body h1, .details h1{
+    font-size: 2.25em;
+}
+
+#leftCol{
+    margin-top: 2.5%;
+    margin-left: -2%;
+    margin-right: 2%;
+}
+
+#rightCol{
+    margin-top: 2.5%;
+    margin-right: -2%;
+    margin-left: 2%;
+}
+
+.body, .calc, .details {
+    margin: 5%;
+}
+
+.calc form {
+    margin-top: -2%;
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+    grid-template-rows: repeat(5, auto);
+}
+
+.c1 {
+    justify-self: right;
+    margin-right: 20px;
+}
+
+.c2 {
+    justify-self: left;
+}
+
+.calc form .c2 input#monthlyUsage.form-control, .calc form .c2 input#daysOfBillingPeriod.form-control, .calc form .c2 input#salesTax.form-control {
+    height: 25px;
+    width: 75px;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-group {
+    display: flex;
+    justify-content: right;
+}
+
+.form-group input[type="button"]  {
+    margin-right: 20px;
+}
+
+.form-group input[type="reset"] {
+    margin-right: -75px;
+}
+/* stopped here trying to float buttons to right side, still need to open other page when total over 500 */
+
+#salesTax, #monthlyUsage, #daysOfBillingPeriod {
+    width: 15%;
+}
+
+.details table {
+    width: 100%;
+    border: 1px solid var(--border-colors);
+}
+
+.details table tr:nth-child(even) {
+    background-color: hsla(0, 0%, 35%, 0.1);
+}
+
+.details table tr {
+    border-bottom: black 1px solid;
+    height: 30px;
+}
+
+.details table tr td {
+    padding: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
