@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <title>CSCI225 Homepage of Jadon Ott</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/realestateStyle.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><button>Buy</button></li>
+            <li><button>Sale</button></li>
+            <li><button>Loan</Button></li>
+            <li><button>About</button></li>
+        </ul>
+    </div>
+
+    <div class="loanCalc">
+        <form action="">
+            <header>Loan Information</header>
+            <p><label for="loanAmount">Loan Amount: <input type="number" name="loanAmount" id="loanAmount">$</label>
+            <p><label for="interestRate">Interest Rate: <input type="number" name="interestRate" id="interestRate">%</label></p>
+            <p><label for="loanTerm">Loan Term: <input type="number" name="loanTerm" id="loanTerm">Years</label></p>
+            <p><label for="propertyTax">Start Date: <select name="month" id="month">
+                <option value="January">January</option>
+                <option value="Febuary">Febuary</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <select name="year" id="year">
+            </select></label></p>
+            <script>
+                var year = document.getElementById("year");
+                var currentYear = new Date().getFullYear();
+                for (var i = -15; i < 15; i++) {
+                    let option = document.createElement("option");
+                    option.text = currentYear + i;
+                    year.add(option);
+                }
+                document.getElementById("year").value = currentYear;
+            </script>
+            <p><label for="showResultsBy">Show Results By: <select name="showResultsBy" id="showResultsBy">
+                <option value="year">Year</option>
+            </select></label></p>
+            <p><button>Calculate</button></p>
+
+        </form>
+    </div>
+</body>
+
+</html>
