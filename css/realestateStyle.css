@@ -1,0 +1,123 @@
+body {
+    background-image: url("../img/Estate.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    position: fixed;
+    width: 359px;
+    height: 10%;
+    top: -16px;
+    left: -34px;
+}
+
+.navbar li {
+    display: inline-table;
+    margin-left: -5px;
+    width: 25%;
+}
+
+div.navbar li button {
+    padding: 15px;
+    width: 100%;
+    display: inline-block;
+    line-height: 100%;
+    border: #000000 solid 1px;
+    background-color: #4f74a2;
+    font-size: 1em;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+div.navbar li button:hover {
+    background-color: #2e4e7e;
+}
+
+.loanCalc {
+    position: fixed;
+    top: 10vw;
+    right: 10vw;
+    background-color: hsla(177, 100%, 92%, 0.863);
+    height: 14vw;
+    width: 25vw;
+    font-size: 1.25em;
+}
+
+.loanCalc header {
+    background-color: rgba(155, 198, 248, 0.986);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1em;
+    width: 25vw;
+}
+
+.loanCalc button {
+    background-color: rgba(155, 198, 248, 0.986);
+    color: #FFFFFF;
+    border: none;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    cursor: pointer;
+    bottom: 0px;
+    margin-top: 15px;
+}
+
+.loanCalc button:hover {
+    background-color: #2e4e7e;
+}
+
+.loanCalc input {
+    width: 40%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 30px);
+    height: 100%;
+    width: 100%;
+    gap: 10px;
+    padding-left: -100px;
+}
+
+.cl {
+    justify-self: right;
+}
+
+.cr {
+    justify-self: left;
+}
+
+.table p {
+    top: 5vw;
+    right: 10vw;
+}
+
+.table table {
+    position: absolute;
+    top: 7vw;
+    right: 10vw;
+    width: 20vw;
+    background-color: hsla(177, 100%, 92%, 0.863);
+
+}
+
+.table table tr:nth-child(even) {
+    background-color: hsla(177, 93%, 83%, 0.863);
+}
+
+.table table tr td {
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+.table table tr th {
+    background-color: rgba(155, 198, 248, 0.986);
+}

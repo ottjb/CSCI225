@@ -22,12 +22,14 @@
     </div>
 
     <div class="loanCalc">
+
         <form action="">
             <header>Loan Information</header>
-            <p><label for="loanAmount">Loan Amount: <input type="number" name="loanAmount" id="loanAmount">$</label>
-            <p><label for="interestRate">Interest Rate: <input type="number" name="interestRate" id="interestRate">%</label></p>
-            <p><label for="loanTerm">Loan Term: <input type="number" name="loanTerm" id="loanTerm">Years</label></p>
-            <p><label for="startDate">Start Date: <select name="month" id="month">
+            <div class="grid-container">
+            <p class="cl"><label for="loanAmount">Loan Amount:</p><p class="cr"><input type="number" name="loanAmount" id="loanAmount"> $</label></p>
+            <p class="cl"><label for="interestRate">Interest Rate:</p><p class="cr"><input type="number" name="interestRate" id="interestRate"> %</label></p>
+            <p class="cl"><label for="loanTerm">Loan Term:</p><p class="cr"><input type="number" name="loanTerm" id="loanTerm"> Years</label></p>
+            <p class="cl"><label for="startDate">Start Date:</p><p class="cr"><select name="month" id="month">
                 <option value="1">January</option>
                 <option value="2">Febuary</option>
                 <option value="3">March</option>
@@ -53,10 +55,11 @@
                 }
                 document.getElementById("year").value = currentYear;
             </script>
-            <p><label for="showResultsBy">Show Results By: <select name="showResultsBy" id="showResultsBy">
+            <p class="cl"><label for="showResultsBy">Show Results By:</p><p class="cr"><select name="showResultsBy" id="showResultsBy">
                 <option value="year">Year</option>
                 <option value="month">Month</option>
             </select></label></p>
+        </div>
             <p><button type="button" id="calcButton">Calculate</button></p>
 
         </form>
