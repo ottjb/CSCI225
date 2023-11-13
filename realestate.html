@@ -6,15 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/realestateStyle.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="navbar">
         <ul>
-            <li><button>Buy</button></li>
-            <li><button>Sale</button></li>
-            <li><button>Loan</Button></li>
-            <li><button>About</button></li>
+            <li><button type="button" id="buyButton">Buy</button></li>
+            <li><button type="button" id="saleButton">Sale</button></li>
+            <li><button type="button" id="loanButton">Loan</Button></li>
+            <li><button type="button" id="aboutButton">About</button></li>
         </ul>
     </div>
 
@@ -24,19 +27,19 @@
             <p><label for="loanAmount">Loan Amount: <input type="number" name="loanAmount" id="loanAmount">$</label>
             <p><label for="interestRate">Interest Rate: <input type="number" name="interestRate" id="interestRate">%</label></p>
             <p><label for="loanTerm">Loan Term: <input type="number" name="loanTerm" id="loanTerm">Years</label></p>
-            <p><label for="propertyTax">Start Date: <select name="month" id="month">
-                <option value="January">January</option>
-                <option value="Febuary">Febuary</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
+            <p><label for="startDate">Start Date: <select name="month" id="month">
+                <option value="1">January</option>
+                <option value="2">Febuary</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
             </select>
             <select name="year" id="year">
             </select></label></p>
@@ -52,11 +55,17 @@
             </script>
             <p><label for="showResultsBy">Show Results By: <select name="showResultsBy" id="showResultsBy">
                 <option value="year">Year</option>
+                <option value="month">Month</option>
             </select></label></p>
-            <p><button>Calculate</button></p>
+            <p><button type="button" id="calcButton">Calculate</button></p>
 
         </form>
     </div>
+
+    <div class="table">
+
+    </div>
+    <script src="js/realestateScript.js"></script>
 </body>
 
 </html>
